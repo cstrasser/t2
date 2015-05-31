@@ -1,0 +1,37 @@
+ {% extends 'base.html' %}
+ {% load staticfiles %}
+ <div class="page-header"><P>-</P></div>
+{%block body_block%}
+<form id="personal-data" class="form-horizontal" method="POST" action="#">
+
+<div class="tabbable">
+  <div class="page-header">
+  <ul class="nav nav-tabs">
+    <li class="active">
+      <a href="#1" data-toggle="tab">Basic</a>
+    </li>
+    <li>
+      <a href="#2" data-toggle="tab">Special</a>
+    </li>
+    <li>
+      <a href="#3" data-toggle="tab">Notes</a>
+    </li>     
+  </ul>
+  <div class="tab-content">
+    <div class="tab-pane" id="1">      
+      <p>Basic informayion
+      this and that and a button and ... </p>
+    </div>
+    <div class="tab-pane" id="2">
+      <!-- form controls to be continued here -->
+      <p>Special tabb area</p>
+    </div>
+    <div class="tab-pane" id="3">
+      
+      <p>SPot here for notes</p>
+    </div>     
+  </div>
+</div>
+
+</form>
+{%endblock%}

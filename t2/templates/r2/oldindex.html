@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+    {% load static %}
+
+{% block body_block %}
+
+        <h1>R2</h1>
+        <p> Visits: {{ visits }}</p>
+        {% if user.is_authenticated %}
+<h1>... hello {{ user.username }}!</h1>
+{% else %}
+<h1>Login or Register</h1>
+{% endif %}
+       
+{% if user.is_authenticated %}  
+{% if categories %}
+    {% for category in categories %}
+     <li><a href="/r2/category/{{ category.slug }}">{{category.name}} Likes --> {{category.likes}}</a></li>  
+    {% endfor %}
+        
+    {% else %}
+    <strong>There are no Categories</strong>
+{% endif %}
+
+{% if pages%}
+    {% for page in pages %}
+              <Ul>  {{page.title}} views -->{{page.views}}</UL>
+    {% endfor %}
+{% endif %}
+
+
+<a href="/r2/add_category/">Add a New Category</a><br />
+<a href="/r2/logout/">Logout</a><br />
+{% else %}
+<!--<a href="/r2/register/">Register Here</a><br />
+<a href="/r2/login/">Login</a><br />-->
+{% endif %}
+{%endblock%}
+<a href="/r2/about/">About</a><br/>
+
+        <img src="{% static "images/smiley.jpg" %}" alt="Picture" />
+  
